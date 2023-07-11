@@ -17,7 +17,7 @@ function gameInit()
 //ゲームループ
 function gameLoop()
 {
-    
+    //描画
 }
 
 window.onload=function()
