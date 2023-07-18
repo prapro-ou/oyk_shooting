@@ -1,10 +1,24 @@
-import player from "~/.player"
-import enemy from "~./enemy"
-import map from "./map";
+'use strict';
 
-const SCREEN_WIDTH  = 1920;
-const SCREEN_HEIGHT = 1080;
+class DanmakuStgMainScene extends Scene {
+    constructor(renderingTarget) {
+        super('メイン', 'black', renderingTarget);
+        const shooter = new Player(150, 300);
+        this.add(shooter);
+    }
+}
 
-const canvas = document.getElementById("can");
-const ctx = canvas.getContext("2d");
+class DanamkuStgGame extends Game {
+    constructor() {
+        super('弾幕STG', 300, 400, 60);
+        const mainScene = new DanmakuStgMainScene(this.screenCanvas);
+        this.changeScene(mainScene);
+    }
+}
 
+assets.addImage('sprite', 'assets/image/sprite.png');
+assets.loadAll().then((a) => {
+    const game = new DanamkuStgGame();
+    document.body.appendChild(game.screenCanvas);
+    game.start();
+});
