@@ -115,7 +115,7 @@ class InputReceiver {
 
 class Bullet {
     constructor(x, y) {
-        const sprite = new Sprite(assets.get('sprite'), new Rectangle(0, 16, 16, 16));
+        const sprite = new Sprite(assets.get('sprite2'), new Rectangle(0, 0, 16, 16));
         const hitArea = new Rectangle(4, 0, 8, 16);
 
         this._eventListeners = {};
