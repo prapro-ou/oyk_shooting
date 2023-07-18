@@ -1,5 +1,3 @@
-'use strict';
-
 class DanmakuStgMainScene extends Scene {
     constructor(renderingTarget) {
         super('メイン', 'black', renderingTarget);

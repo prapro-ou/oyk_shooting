@@ -1,5 +1,5 @@
-const SCREEN_WIDTH  = 1920;
-const SCREEN_HEIGHT = 1080;
+//const SCREEN_WIDTH  = 1920;
+//const SCREEN_HEIGHT = 1080;
 
 const OBJECT_W = 40;
 const OBJECT_H = 40;

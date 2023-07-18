@@ -1,5 +1,3 @@
-'use strict';
-
 class Rectangle {
     constructor(x, y, width, height) {
         this.x = x;
