@@ -7,11 +7,6 @@ const OBJECT_H = 40;
 const ROW_N = SCREEN_WIDTH/OBJECT_W;
 const COLUMN_N = SCREEN_HEIGHT/OBJECT_H;
 
-const canvas = document.getElementById("can");
-const ctx = canvas.getContext("2d");
-canvas.width = SCREEN_WIDTH;
-canvas.height = SCREEN_HEIGHT;
-
 class Map{
     constructor(mapn,map_array,enemy_array){
         this.mapn = mapn;
