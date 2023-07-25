@@ -1,4 +1,15 @@
 //当たり判定
+function checkHit(x1, y1, r1, x2, y2, r2){
+    //円同士の当たり判定
+    let a = (x2-x1)>>8;
+    let b = (y2-y1)>>8;
+    let r = r1 + r2;
+
+    return r*r >= a*a + b*b;
+
+}
+
+//当たり判定の確認
 function hittest(){
     let distance;
     //自機と敵機

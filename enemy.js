@@ -109,17 +109,6 @@ let tekiFunc = [
     tekiMove02,
 ]
 
-//当たり判定
-function checkHit(x1, y1, r1, x2, y2, r2){
-    //円同士の当たり判定
-    let a = (x2-x1)>>8;
-    let b = (y2-y1)>>8;
-    let r = r1 + r2;
-
-    return r*r >= a*a + b*b;
-
-}
-
 //スプライトを描画する
 function drawSprite(snum, x, y){
     let sx = sprite[snum].x;
