@@ -1,5 +1,5 @@
 class enemy{
-    constructor(tnum, size,  x, y, vx, vy, speed, hp, atk, level, reload, rateOfFire, r){
+    constructor(tnum, size,  x, y, vx, vy, speed, hp, atk, atkBullet, level, reload, rateOfFire, r){
         this.tnum = tnum;
         this.size = size;
         this.x = x;
@@ -9,6 +9,7 @@ class enemy{
         this.speed = speed;
         this.hp = hp;
         this.atk = atk;
+        this.atkBullet = atkBullet;
         this.level = level;
         this.reload = reload;
         this.rateOfFire;
@@ -44,7 +45,7 @@ function tekiShot(obj, speed){
     dx = Math.cos(an)*speed;
     dy = Math.sin(an)*speed;
 
-    teta.push(new Teta(15, obj.x, obj.y, dx, dy));
+    teta.push(new bullet(15, obj.atkBullet, obj.x, obj.y, dx, dy));
 }
 
 //ピンクのひよこの移動パターン
@@ -117,4 +118,18 @@ function checkHit(x1, y1, r1, x2, y2, r2){
 
     return r*r >= a*a + b*b;
 
+}
+
+//スプライトを描画する
+function drawSprite(snum, x, y){
+    let sx = sprite[snum].x;
+    let sy = sprite[snum].y;
+    let sw = sprite[snum].w;
+    let sh = sprite[snum].h;
+
+    let px = (x>>8)-sw/2;
+    let py = (y>>8)-sh/2;
+    if(px+sw<camera_x || px>=camera_x+SCREEN_W || py+sh<camera_y || py>=camera_y+SCREEN_H)
+    return;
+    vcon.drawImage(spriteImage, sx, sy, sw, sh, px, py, sw, sh);
 }
