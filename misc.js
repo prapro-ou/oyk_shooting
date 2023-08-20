@@ -135,7 +135,7 @@ document.onkeyup = function(e)
 //マウスの座標取得
 document.onmousemove = function(e) 
 {
-    mouse[0] = e.pageX - 207;
+    mouse[0] = e.pageX - (window.outerWidth - CANVAS_W)/2;
     mouse[1] = e.pageY - 27;
 }
 
